@@ -1,0 +1,8 @@
+langchain 
+pydantic 
+langchainhub
+tiktoken
+wandb
+langchain_openai 
+fastapi[all]
+uvicorn[standard]

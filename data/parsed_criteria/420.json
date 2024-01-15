@@ -1,0 +1,95 @@
+{
+    "type": "Criteria",
+    "data": {
+        "description": "Colorectal cancer screening",
+        "requires_inference": false,
+        "sub_criteria": [
+            {
+                "description": "Patient has average-risk or higher",
+                "requires_inference": false,
+                "sub_criteria": [
+                    {
+                        "description": "Age 45 years or older",
+                        "requires_inference": true,
+                        "sub_criteria": null,
+                        "sub_criteria_condition": null
+                    },
+                    {
+                        "description": "No colonoscopy in past 10 years",
+                        "requires_inference": true,
+                        "sub_criteria": null,
+                        "sub_criteria_condition": null
+                    }
+                ],
+                "sub_criteria_condition": {
+                    "operator": "==",
+                    "value": 2
+                }
+            },
+            {
+                "description": "High risk family history",
+                "requires_inference": false,
+                "sub_criteria": [
+                    {
+                        "description": "Colorectal cancer diagnosed in one or more first-degree relatives of any age",
+                        "requires_inference": true,
+                        "sub_criteria": [
+                            {
+                                "description": "Age 40 years or older",
+                                "requires_inference": true,
+                                "sub_criteria": null,
+                                "sub_criteria_condition": null
+                            },
+                            {
+                                "description": "Symptomatic (eg, abdominal pain, iron deficiency anemia, rectal bleeding)",
+                                "requires_inference": true,
+                                "sub_criteria": null,
+                                "sub_criteria_condition": null
+                            }
+                        ],
+                        "sub_criteria_condition": {
+                            "operator": "==",
+                            "value": 2
+                        }
+                    },
+                    {
+                        "description": "Family member with colonic adenomatous polyposis of unknown etiology",
+                        "requires_inference": true,
+                        "sub_criteria": null,
+                        "sub_criteria_condition": null
+                    }
+                ],
+                "sub_criteria_condition": {
+                    "operator": ">=",
+                    "value": 1
+                }
+            },
+            {
+                "description": "Juvenile polyposis syndrome diagnosis",
+                "requires_inference": false,
+                "sub_criteria": [
+                    {
+                        "description": "Age 12 years or older and symptomatic (eg, abdominal pain, iron deficiency anemia, rectal bleeding, telangiectasia)",
+                        "requires_inference": true,
+                        "sub_criteria": null,
+                        "sub_criteria_condition": null
+                    },
+                    {
+                        "description": "Age younger than 12 years and symptomatic (eg, abdominal pain, iron deficiency anemia, rectal bleeding, telangiectasia)",
+                        "requires_inference": true,
+                        "sub_criteria": null,
+                        "sub_criteria_condition": null
+                    }
+                ],
+                "sub_criteria_condition": {
+                    "operator": ">=",
+                    "value": 1
+                }
+            }
+        ],
+        "sub_criteria_condition": {
+            "operator": ">=",
+            "value": 1
+        }
+    }
+}

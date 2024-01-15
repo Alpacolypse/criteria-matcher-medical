@@ -1,0 +1,88 @@
+{
+    "type": "Criteria",
+    "data": {
+        "criteria": {
+            "conjunction_sub_criteria": [],
+            "disjunction_sub_criteria": [
+                {
+                    "criteria": {
+                        "conjunction_sub_criteria": [
+                            {
+                                "criteria": {
+                                    "description": "HbA1c level of 6.5% or higher"
+                                }
+                            },
+                            {
+                                "criteria": {
+                                    "description": "Fasting blood sugar level of 126 mg/dL or higher"
+                                }
+                            }
+                        ],
+                        "disjunction_sub_criteria": [],
+                        "disjunction_condition": {
+                            "operator": "==",
+                            "value": 0
+                        }
+                    }
+                },
+                {
+                    "criteria": {
+                        "conjunction_sub_criteria": [
+                            {
+                                "criteria": {
+                                    "description": "Diabetes diagnosed in one or more first-degree relatives of any age"
+                                }
+                            }
+                        ],
+                        "disjunction_sub_criteria": [
+                            {
+                                "criteria": {
+                                    "description": "History of cardiovascular disease"
+                                }
+                            },
+                            {
+                                "criteria": {
+                                    "description": "Presence of kidney disease or microalbuminuria"
+                                }
+                            },
+                            {
+                                "criteria": {
+                                    "description": "Diabetic retinopathy or neuropathy"
+                                }
+                            }
+                        ],
+                        "disjunction_condition": {
+                            "operator": ">=",
+                            "value": 2
+                        }
+                    }
+                },
+                {
+                    "criteria": {
+                        "conjunction_sub_criteria": [
+                            {
+                                "criteria": {
+                                    "description": "HbA1c level above the target range set by the physician"
+                                }
+                            },
+                            {
+                                "criteria": {
+                                    "description": "Uncontrolled blood sugar levels despite current medication regimen"
+                                }
+                            }
+                        ],
+                        "disjunction_sub_criteria": [],
+                        "disjunction_condition": {
+                            "operator": "==",
+                            "value": 0
+                        }
+                    }
+                }
+            ],
+            "disjunction_condition": {
+                "operator": ">=",
+                "value": 1
+            }
+        }
+    }
+}

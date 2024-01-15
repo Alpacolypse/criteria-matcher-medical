@@ -1,0 +1,12 @@
+langchain 
+unstructured[all-docs] 
+pydantic 
+lxml 
+langchainhub
+chromadb
+tiktoken
+wandb
+langchain_openai 
+fastapi[all]
+uvicorn[standard]
+devtools
