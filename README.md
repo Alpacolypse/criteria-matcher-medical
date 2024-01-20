@@ -167,4 +167,19 @@ Upload a medical record PDF. If the record contains a CPT code for which treatme
 ]
 ```
 
+A criteria can either be - 
+1. A leaf level (aka without any sub-criteria) predicate. It evalutes to true when the predicate is true for the given medical record. 
+2. A criteria with nested conjunction (necessary) and disjunction (optional) sub-criteria. This type of criteria is true if all the conjunction sub-criteria are true and if the number of true disjunction criteria match the disjunction condition. 
+For e.g "A must be true but only one of B or C must be true" translates to - 
+
+```
+conjunction_sub_criteria: [A]
+disjunction_sub_critiera: [B,C]
+disjunctrion_sub_condition: operator="==", value=1
+```
+
+
+HLD :
+![criteria_matcher_medical_10000ft](https://github.com/Alpacolypse/criteria-matcher-medical/assets/128543722/15764887-9770-4d98-94ac-dfc925366a3e)
+
 
