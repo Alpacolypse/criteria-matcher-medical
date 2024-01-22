@@ -32,21 +32,9 @@ class RecordKnowledgeBase:
         self.path = "data/records"
         self.model = ChatOpenAI(temperature=0, model=MODEL_NAME)
         self.retriever = self._ingest(file_path)
-        self.criteria_type = self._get_criteria_type()
 
     def get_relevant_documents(self, query):
         return self._get_document_query_chain().invoke(query)
-
-    def _get_criteria_type(self):
-        if self.retriever is None:
-            return None
-        else:
-            query = "What is/are the CPT code(s) for the requested procedure(s) suggested for this patient?"
-            relevant_documents = self.get_relevant_documents(query)
-
-            chain = cpt_code_prompt_template | self.model | cpt_code_parser
-
-            return chain.invoke({"context": relevant_documents, "query": query})
 
     def _ingest(self, file_path):
         raw_pdf_elements = partition_pdf(

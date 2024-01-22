@@ -1,17 +1,10 @@
 from langchain_core.pydantic_v1 import BaseModel
 from data.sample_criteria import COLONOSCOPY_CRITERIA
 from shared.exceptions import CriteriaNotFoundError
-# import models
-
 import os
 import json
 
-
 class CriteriaStore:
-    def __init__(self):
-        self.store = {
-            "45378s": COLONOSCOPY_CRITERIA,
-        }
 
     def insert_criteria(self, criteria_type_id: str, criteria_obj: BaseModel):
         # Define the directory path
@@ -44,23 +37,3 @@ class CriteriaStore:
                 return criteria_json
         except FileNotFoundError:
             raise CriteriaNotFoundError(criteria_type_id)
-
-    """
-    def get_criteria_obj(
-            self,
-            criteria_type_id: str
-        ):
-        criteria_json = self.get_criteria(criteria_type_id)
-        
-        # Load the JSON content
-        criteria_content = json.loads(criteria_json)
-        criteria_type = criteria_content["type"]
-        criteria_data = criteria_content["data"]
-
-        # Dynamically get the class based on type name
-        # Assuming all criteria classes are defined in a module named 'criteria_models'
-        criteria_class = getattr(models, criteria_type)
-
-        # Deserialize the criteria object
-        return criteria_class.parse_obj(criteria_data)
-        """

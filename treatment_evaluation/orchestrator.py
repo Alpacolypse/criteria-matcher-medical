@@ -2,6 +2,7 @@ from treatment_evaluation.record_knowledge_base import RecordKnowledgeBase
 from shared.model.models import CriteriaOut, TreatmentEvaluationResponse
 from shared.exceptions import CriteriaNotFoundError, CriteriaStoreError
 from devtools import debug
+from treatment_evaluation.doc_utils import get_criteria_type
 
 
 class Orchestrator:
@@ -14,7 +15,7 @@ class Orchestrator:
         record_knowledge_base = RecordKnowledgeBase(file_path)
 
         # Retrieve criteria_type_ids (CPTCodes, in this case) ids from record
-        criteria_type_ids = record_knowledge_base.criteria_type
+        criteria_type_ids = get_criteria_type(record_knowledge_base)
 
         result = []
         for criteria_type_id_code in criteria_type_ids.codes:
