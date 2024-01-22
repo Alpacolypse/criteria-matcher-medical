@@ -36,8 +36,8 @@ class CriteriaMatcher:
         )
 
         if (
-            conservative_pre_screening_criteria_result.decision == "true"
-            or conservative_pre_screening_criteria_result.decision == "uncertain"
+            conservative_pre_screening_criteria_result.decision.lower() == "true"
+            or conservative_pre_screening_criteria_result.decision.lower() == "uncertain"
         ):
             return self._match(criteria, knowledge_base)
         else:
@@ -106,8 +106,8 @@ class CriteriaMatcher:
         self, criteria_list: List[Criteria], knowledge_base: RecordKnowledgeBase
     ):
         evals = [self._match(criteria, knowledge_base) for criteria in criteria_list]
-        true_count = sum(sc.decision == "true" for sc in evals)
-        uncertain_count = sum(sc.decision == "uncertain" for sc in evals)
+        true_count = sum(sc.decision.lower() == "true" for sc in evals)
+        uncertain_count = sum(sc.decision.lower() == "uncertain" for sc in evals)
         return true_count, uncertain_count, evals
 
     def _evaluate_conjunction(
@@ -145,8 +145,8 @@ class CriteriaMatcher:
             return "true" if true_count > 0 else "false"
 
     def _combine_decisions(self, conjunction_decision, disjunction_decision):
-        if conjunction_decision == "false" or disjunction_decision == "false":
+        if conjunction_decision.lower() == "false" or disjunction_decision.lower() == "false":
             return "false"
-        if conjunction_decision == "uncertain" or disjunction_decision == "uncertain":
+        if conjunction_decision.lower() == "uncertain" or disjunction_decision.lower() == "uncertain":
             return "uncertain"
         return "true"

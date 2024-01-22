@@ -11,7 +11,10 @@ def get_structured_output_with_context_template(structured_output_parser, instru
     return PromptTemplate(
         template="""Given the following 'Context' about the medical patient, answer the query. 
                           Context: {context}
+                          ##### END OF CONTEXT ##### 
                           Query: {query}
+                          ##### END OF QUERY #####
+                          Follow the instructions below to format your response.
                           Formatting instructions: {format_instructions}
                           {input_instructions}""",
         input_variables=["context", "query"],
@@ -24,7 +27,7 @@ def get_structured_output_with_context_template(structured_output_parser, instru
 
 CRITERIA_VALIDY_INPUT_INSTRUCTIONS = """Assume that any medical/treatment history of the patient provided is complete and authoritative. 
 In your response,'decision' should contain whether the given Query about the patient is true, false or uncertain. 
-Respond with 'true' only when there is concrete evidence to support the statement. Respond with 'false' only when there is concrete evidence against it. 
+Respond with 'true' only when there is concrete evidence to support the statement. Respond with 'false' when there is concrete evidence against it. 
 Respond with 'uncertain' if there is no information about the statement.
 'reason' should contain the reason why you think the query is true/false/uncertain and the relevant section of the document that supports your answer."""
 

@@ -4,7 +4,7 @@ from typing import List, Union, Optional
 
 
 class CriteriaInput(BaseModel):
-    code: str
+    id: str
     criteria: str
 
 
@@ -54,10 +54,10 @@ SubCriteria.update_forward_refs()
 
 
 class CriteriaValidity(BaseModel):
+    reason: str = Field(description="The reason and context for the decision")
     decision: str = Field(
         description="Whether the criteria is 'true', 'false' or 'uncertain'"
     )
-    reason: str = Field(description="The reason and context for the decision")
 
 
 class CriteriaPredicateOut(BaseModel):

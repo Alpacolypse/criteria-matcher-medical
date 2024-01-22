@@ -14,16 +14,16 @@ CRITERIA_FEW_SHOT_EXAMPLES = """
 ---
 Input:
 • Type 2 Diabetes management, as indicated by 1 or more of the following:
-o Patient diagnosed with Type 2 Diabetes, as indicated by ALL of the following:
-§ HbA1c level of 6.5% or higher
-§ Fasting blood sugar level of 126 mg/dL or higher
-o Diabetes diagnosed in one or more first-degree relatives of any age and 2 of the thefollowing:
-§ History of cardiovascular disease
-§ Presence of kidney disease or microalbuminuria
-§ Diabetic retinopathy or neuropathy
-o Patients not meeting targets on current management plan, indicated by:
-§ HbA1c level above the target range set by the physician
-§ Uncontrolled blood sugar levels despite current medication regimen
+\to Patient diagnosed with Type 2 Diabetes, as indicated by ALL of the following:
+\t\t§ HbA1c level of 6.5% or higher
+\t\t§ Fasting blood sugar level of 126 mg/dL or higher
+\to Diabetes diagnosed in one or more first-degree relatives of any age and 2 of the thefollowing:
+\t\t§ History of cardiovascular disease
+\t\t§ Presence of kidney disease or microalbuminuria
+\t\t§ Diabetic retinopathy or neuropathy
+\to Patients not meeting targets on current management plan, indicated by:
+\t\t§ HbA1c level above the target range set by the physician
+\t\t§ Uncontrolled blood sugar levels despite current medication regimen
 ###
 {
         "criteria": {

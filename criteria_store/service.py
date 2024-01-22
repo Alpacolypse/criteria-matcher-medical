@@ -24,22 +24,20 @@ def ingest(criteria_in: CriteriaInput, criteria_store=Depends(get_criteria_store
         # Parse the criteria string to a Criteria object
         criteria_obj: Criteria = CriteriaParser.parse(Criteria, criteria_in.criteria)
 
-        criteria_store.insert_criteria(criteria_in.code, criteria_obj)
+        criteria_store.insert_criteria(criteria_in.id, criteria_obj)
 
-        return {
-            "message": f"Criteria for code {criteria_in.code} ingested successfully"
-        }
+        return criteria_obj
     except Exception as e:
         raise HTTPException(
             status_code=500, detail="Failed to ingest criteria, internal server error"
         )
 
 
-@app.get("/criteria/retrieve/{code}")
-def retrieve(code: str, criteria_store=Depends(get_criteria_store)):
+@app.get("/criteria/retrieve/{id}")
+def retrieve(id: str, criteria_store=Depends(get_criteria_store)):
     try:
         # Load the JSON from the file
-        return criteria_store.get_criteria(code)
+        return criteria_store.get_criteria(id)
 
     except CriteriaNotFoundError:
         raise HTTPException(status_code=404, detail="Criteria not found")
