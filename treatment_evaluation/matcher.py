@@ -37,7 +37,8 @@ class CriteriaMatcher:
 
         if (
             conservative_pre_screening_criteria_result.decision.lower() == "true"
-            or conservative_pre_screening_criteria_result.decision.lower() == "uncertain"
+            or conservative_pre_screening_criteria_result.decision.lower() == "uncertain" 
+            or conservative_pre_screening_criteria_result.decision.lower() == "false" ## temporary 
         ):
             return self._match(criteria, knowledge_base)
         else:

@@ -13,17 +13,17 @@ The SubCriteria is considered to be satisfied only when all of the conjunction_s
 CRITERIA_FEW_SHOT_EXAMPLES = """
 ---
 Input:
-• Type 2 Diabetes management, as indicated by 1 or more of the following:
-\to Patient diagnosed with Type 2 Diabetes, as indicated by ALL of the following:
-\t\t§ HbA1c level of 6.5% or higher
-\t\t§ Fasting blood sugar level of 126 mg/dL or higher
-\to Diabetes diagnosed in one or more first-degree relatives of any age and 2 of the thefollowing:
-\t\t§ History of cardiovascular disease
-\t\t§ Presence of kidney disease or microalbuminuria
-\t\t§ Diabetic retinopathy or neuropathy
-\to Patients not meeting targets on current management plan, indicated by:
-\t\t§ HbA1c level above the target range set by the physician
-\t\t§ Uncontrolled blood sugar levels despite current medication regimen
+Type 2 Diabetes management, as indicated by 1 or more of the following:
+\t Patient diagnosed with Type 2 Diabetes, as indicated by ALL of the following:
+\t\t HbA1c level of 6.5% or higher
+\t\t Fasting blood sugar level of 126 mg/dL or higher
+\t Diabetes diagnosed in one or more first-degree relatives of any age and 2 of the thefollowing:
+\t\t History of cardiovascular disease
+\t\t Presence of kidney disease or microalbuminuria
+\t\t Diabetic retinopathy or neuropathy
+\t Patients not meeting targets on current management plan, indicated by:
+\t\t HbA1c level above the target range set by the physician
+\t\t Uncontrolled blood sugar levels despite current medication regimen
 ###
 {
         "criteria": {
