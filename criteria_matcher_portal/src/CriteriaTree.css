@@ -1,0 +1,40 @@
+.tree {
+    text-align: left;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .criteria, .disjunction-condition {
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+  
+  .sub-criteria {
+    border-left: 1px dashed #ddd;
+    margin-left: 10px;
+    padding-left: 10px;
+  }
+  
+  .decision-true {
+    background-color: lightgreen;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 5px;
+  }
+  
+  .decision-false {
+    background-color: lightcoral;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 5px;
+  }
+  
+  .decision-uncertain {
+    background-color: lightyellow;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 5px;
+  }
+  

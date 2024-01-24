@@ -6,7 +6,6 @@ from shared.model.models import (
     CPTCodes,
 )
 
-
 def get_structured_output_with_context_template(structured_output_parser, instructions):
     return PromptTemplate(
         template="""Given the following 'Context' about the medical patient, answer the query. 
