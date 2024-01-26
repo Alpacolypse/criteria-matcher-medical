@@ -1,3 +1,5 @@
+## NOTE: Check out the playground for a more generalized version of criteria matcher, available here - https://app-criteria-matcher.streamlit.app/
+
 
 # Criteria Matcher
 
